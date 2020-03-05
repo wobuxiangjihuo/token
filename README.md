@@ -2,13 +2,14 @@
 token安全令牌的相关的代码以及所需要的gradle依赖
 
 
-<br>
-1.引入token安全令牌相关的依赖
+
+# 1.引入token安全令牌相关的依赖
+```
 compile group: 'com.auth0', name: 'java-jwt', version: '2.2.0' //新增--JWT   token安全令牌
+```
 
 
-<br>
-2.登录成功后,生成TOKEN
+# 2.登录成功后,生成TOKEN
 ```
  User user= loginMapper.getUserByPhoneAndLoginPassword(phone,password);
         if(user!=null)
@@ -28,8 +29,8 @@ compile group: 'com.auth0', name: 'java-jwt', version: '2.2.0' //新增--JWT   t
             
  ```          
 
-<br>
-3. 在访问每个控制层方法时,需要在拦截器中校验TOKEN合法性
+
+# 3. 在访问每个控制层方法时,需要在拦截器中校验TOKEN合法性
 ```
 String token= request.getParameter("token");
         //检测token是否为空
